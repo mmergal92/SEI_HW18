@@ -1,0 +1,68 @@
+import React from "react";
+import AllRec from 'Receipts';
+
+const ReceiptsInfo = (props)=>{
+const receiptData = [
+    {
+      person: "Karolin",
+      order: {
+        main: 'Burrito',
+        protein: 'Organic Tofu',
+        rice: 'Purple Rice',
+        sauce: 'Green Crack',
+        toppings: [
+          'Baby Bok Choy', 'Cucumber Kimchi'
+        ],
+        drink: 'Korchata',
+        cost: 22
+      },
+      paid: false
+    },
+    {
+      person: 'Mark',
+      order: {
+        main: 'Rice Bowl',
+        protein: 'Ginger Soy Chix',
+        rice: 'Sticky Rice',
+        sauce: 'Korilla',
+        toppings: [
+          'Yuzu Pickled Sweet Pepper', 'Kale'
+        ],
+        drink: 'Korchata',
+        cost: 19
+      },
+      paid: false
+    },
+    {
+      person: 'Matt',
+      order: {
+        main: 'Salad Bowl',
+        protein: 'Organic Tofu',
+        rice: 'none',
+        sauce: "K'lla",
+        toppings: [
+          'Blue Potato Salad', 'Pico De Gallo', 'Red Kimchi'
+        ],
+        drink: 'Sparkling Blood Orange Soda',
+        cost: 20
+      },
+      paid: true
+    }
+  ]
+  return(
+    <div className="receipts">
+        {receiptData.map((value) => {
+            const { person, order, paid} = value;
+            return (
+                <>
+                <h2>{person}</h2>
+                <h2>{order}</h2>
+                <h2>{paid}</h2>
+                </>
+            );
+        })}
+    </div>
+    ); 
+};
+
+export default ReceiptsInfo;
